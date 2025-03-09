@@ -6,11 +6,11 @@ frontend:
         - npm install
     build:
       commands:
-        - npm run build
+        - npm run build  # Ya está configurado correctamente
   artifacts:
-    baseDirectory: build
+    baseDirectory: dist  # Asegúrate de que sea `dist` porque Vite coloca los archivos allí
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - node_modules/**/*  # No cambia
