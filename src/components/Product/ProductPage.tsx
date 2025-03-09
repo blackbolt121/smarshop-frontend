@@ -1,6 +1,6 @@
 
 import axios from "axios"
-import React, { SyntheticEvent, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getAccessToken } from "../../store/auth"
 import { Product } from "../../store/store"

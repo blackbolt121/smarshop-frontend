@@ -116,6 +116,7 @@ export const Tienda = () => {
                             name="category"
                             value={filters.category}
                             onChange={(e, value)=> {
+                                e
                                 handleCategoriaMarca("category", value || "")
                             }}
                             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -155,6 +156,7 @@ export const Tienda = () => {
                             name="brand"
                             value={filters.brand}
                             onChange={(e, value)=>{
+                                e
                                 handleCategoriaMarca("brand", value || "")
                             }}
                             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

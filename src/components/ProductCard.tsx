@@ -15,6 +15,7 @@ export const ProductCard = (ProductCardProps: ProductCardProps) => {
 
 
     return <Card variant="outlined" className="w-80 max-w-xs p-4 bg-white shadow-lg hover:cursor-pointer" onClick={(e)=>{
+      e
       navigate(`/producto/${ProductCardProps.id}`)
     }}>
     <img

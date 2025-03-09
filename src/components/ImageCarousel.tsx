@@ -1,4 +1,3 @@
-import React from "react";
 import austromex from "../assets/austromex.png";
 import ax from "../assets/ax.png";
 import camca from "../assets/camca.png";

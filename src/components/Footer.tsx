@@ -1,6 +1,6 @@
 import { Typography, IconButton } from '@mui/joy';
 import {Link} from "react-router-dom"
-import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaWhatsapp, FaPhone } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaEnvelope, FaWhatsapp, FaPhone } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../assets/coaim-transparent.png"
 
