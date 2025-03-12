@@ -6,6 +6,7 @@ import { getAccessToken } from '../store/auth';
 import { Product } from '../store/store';
 import { useState } from 'react';
 import ImageCarousel from './ImageCarousel';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const LandingPage = () => {
 
@@ -21,7 +22,7 @@ const LandingPage = () => {
                 "Accept": "application/json",
                 "Authorization": `Bearer ${getAccessToken()}`
             })
-            let productRequest = await axios.get("http://localhost:8080/rest/api/1/producto/all", {
+            let productRequest = await axios.get(`${BASE_URL}/rest/api/1/producto/all`, {
                 headers: {
                     "Authorization": `Bearer ${getAccessToken()}`
                 }

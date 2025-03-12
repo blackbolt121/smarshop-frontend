@@ -5,6 +5,7 @@ import { getAccessToken, saveTokens } from "../store/auth";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { TokenPayload } from "../types/TokenPayload";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +31,7 @@ const Login = () => {
     }
     setError(null);
     try {
-      const auth = await axios.post("http://localhost:8080/auth/login", { 
+      const auth = await axios.post(`${BASE_URL}/auth/login`, { 
         email: email, 
         password: password 
       }, { 

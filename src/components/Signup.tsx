@@ -5,6 +5,8 @@ import axios from "axios";
 import { TokenPayload } from "../types/TokenPayload";
 import {saveTokens, getAccessToken} from "../store/auth"
 
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 const Signup = () => {
 
     const navigate = useNavigate()
@@ -40,7 +42,7 @@ const Signup = () => {
         setError(null); // Limpiar el error
         alert("Signup")
 
-        let request  = await axios.post("http://localhost:8080/auth/register", {
+        let request  = await axios.post(`${BASE_URL}/auth/register`, {
             "email": email,
             "password": password,
             "name": name

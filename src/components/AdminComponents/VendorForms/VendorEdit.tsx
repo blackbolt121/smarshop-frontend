@@ -40,12 +40,13 @@ export const VendorEdit = () => {
     const [vendorWebsite, setVendorWebsite] = useState('');
     const [vendorWebsiteUrl, setVendorWebsiteUrl] = useState('');
     const [vendorFaxUrl, setVendorFaxUrl] = useState('');
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     // Cargar proveedores al iniciar
     useEffect(() => {
         async function fetchVendors() {
             try {
-                const response = await axios.get<Vendor[]>('http://localhost:8080/rest/api/1/vendor/all', {
+                const response = await axios.get<Vendor[]>(`${BASE_URL}/rest/api/1/vendor/all`, {
                     headers: {
                         'Content-Type': 'application/json',
                         Authorization: 'Bearer ' + getAccessToken()
@@ -110,7 +111,7 @@ export const VendorEdit = () => {
         };
 
         try {
-            const response = await axios.put(`http://localhost:8080/rest/api/1/vendor/${selectedVendor.vendorId}`, updatedVendor, {
+            const response = await axios.put(`${BASE_URL}/rest/api/1/vendor/${selectedVendor.vendorId}`, updatedVendor, {
                 headers: {
                     'Content-Type': 'application/json',
                     Authorization: 'Bearer ' + getAccessToken()

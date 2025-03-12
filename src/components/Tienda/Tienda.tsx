@@ -5,6 +5,7 @@ import { getAccessToken } from "../../store/auth";
 import { ProductoHorizontal } from "./ProductoHorizontal";
 import { Input, Select, Option, FormLabel } from "@mui/joy";
 import { MdSell } from "react-icons/md";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const Tienda = () => {
     const [products, setProducts] = useState<Product[]>([]);
@@ -20,7 +21,7 @@ export const Tienda = () => {
         async function loadProducts() {
             try {
                 let productRequest = await axios.get<Product[]>(
-                    "http://localhost:8080/rest/api/1/producto/all",
+                    `${BASE_URL}/rest/api/1/producto/all`,
                     {
                         headers: {
                             Authorization: `Bearer ${getAccessToken()}`,

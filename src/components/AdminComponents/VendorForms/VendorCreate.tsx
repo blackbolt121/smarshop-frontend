@@ -3,6 +3,7 @@ import axios from 'axios';
 import { getAccessToken } from '../../../store/auth';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const handleAddVendor = async (e: any) => {
     e.preventDefault();
@@ -32,7 +33,7 @@ const handleAddVendor = async (e: any) => {
         Authorization: 'Bearer ' + getAccessToken(),
     })
     try {
-        const response = await axios.post('http://localhost:8080/rest/api/1/vendor', vendorData, {
+        const response = await axios.post(`${BASE_URL}/rest/api/1/vendor`, vendorData, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

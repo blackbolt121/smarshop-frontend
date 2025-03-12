@@ -7,6 +7,7 @@ import { Product } from "../../store/store"
 import logo from "../../assets/smartshop.jpg"
 import { Input, Typography, CircularProgress, Button } from "@mui/joy"
 import { Comments } from "../Comments/Comments"
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const ProductPage = () => {
 
@@ -16,8 +17,8 @@ export const ProductPage = () => {
 
     async function fetchProductDetails() {
         console.log("Hello world!!!")
-        console.log(`https://localhost:8080/producto/${id}`)
-        const response = await axios.get<Product>('http://localhost:8080/rest/api/1/producto/' + id, {
+        console.log(`${BASE_URL}/producto/${id}`)
+        const response = await axios.get<Product>(`${BASE_URL}/rest/api/1/producto/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + getAccessToken()
